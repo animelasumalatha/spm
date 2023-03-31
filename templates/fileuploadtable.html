@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File upload</title>
+    <style>
+        body {
+            background-color: azure;
+        }
+        .file {
+            padding: 0.5rem;
+            font-family: sans-serif;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+        .back{
+            float: right;
+        }
+        table,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .form-group {
+            margin: 3%;
+        }
+        .btnstyle {
+            background-color:blue;
+            color:white;
+            padding:10px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <a href="{{url_for('home')}}"><button class="back btnstyle">Back</button></a>
+    <form class="form-group" enctype="multipart/form-data" method="POST">
+        <input type="file" name="file"/>
+        <button>Submit</button>
+    </form>
+    <table cellpadding="10px">
+        {% for i in filesdata %}
+        <tr>
+            <td><a href="{{url_for('readfile',fid=i[0])}}">{{i[2]}}</a></td>
+            <td><a href="{{url_for('deletefile',fid=i[0])}}">Delete</a></td>
+            <td>{{i[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

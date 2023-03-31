@@ -1,0 +1,6 @@
+
+
+tinyurl.com/amreddycode
+
+pip install flask_session
+pip install flask_mysqldb

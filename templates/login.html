@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            background-color: brown;
+        }
+        label {
+            color:white;
+        }
+        .btnstyle {
+            background-color: skyblue;
+            color:black;
+            padding:10px;
+            border-radius: 8px;
+            border:none;
+            margin: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="POST">
+        <center><h1 style="color:white; margin-top:5%;">Log In</h1></center>
+        <div style="margin-left:45%; margin-top:5%;">
+        <label>Roll No:</label>
+        <p><input placeholder="Enter roll number" type="number" name="id" required/></p>
+        <label>Password:</label>
+        <p><input placeholder="Enter password" type="password" name="password" required/></p>
+        <a href="{{url_for('register')}}">No Account?</a>
+        <button class="btnstyle">Submit</button>
+    </form>
+</div>
+</body>
+</html>
